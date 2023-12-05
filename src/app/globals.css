@@ -18,10 +18,33 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.main-container {
+  margin-top: 5rem;
+  min-height: 80vh;
+}
+
+button {
+  background-color: rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
+  border: 1px solid rgb(var(--foreground-rgb));
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-start-rgb));
+}
+
+div>p {
+  text-align: center;
 }
