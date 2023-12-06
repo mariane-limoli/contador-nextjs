@@ -39,19 +39,19 @@ useEffect(() => {
       </div>
       <div>
         <p className='text-4xl font-semibold' >Contador</p>
-        <button onClick={()=>decrementar()} >-</button>
+        <button onClick={decrementar} >-</button>
         <span>{count}</span>
-        <button onClick={()=>incrementar()} >+</button>
+        <button onClick={incrementar} >+</button>
       </div>
       <div>
         <input 
           type="text"
           placeholder="Digite aqui"
-          className='text-black text-2xl bg-red border-2 border-black rounded-lg p-3 min-w-[700px]'
+          className='text-black text-2xl bg-red border-2 border-black rounded-lg p-3 w-[auto]'
           value={inputValue}
           onChange={handleChange}
          />
-         <p>Texto digitado:</p>
+         <p>Texto digitado aparece abaixo:</p>
           <p>{inputValue}</p>
       </div>
     
