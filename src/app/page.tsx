@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [count, setCount] =   useState(0);
@@ -13,7 +13,17 @@ export default function Home() {
     setCount(count-1);
   }
 
+  const [inputValue, setInputValue] = useState('');
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>){
+    setInputValue(e.target.value);
+  }
 
+useEffect(() => {
+  console.log('useEffect funcionando');
+  return () => {
+    console.log('Cleanup function: O componente será desmontado ou useEffect será executado novamente.');
+  };
+},[])
 
   return (
     <main className="main-container flex flex-col items-center justify-between p-24">
@@ -32,6 +42,17 @@ export default function Home() {
         <button onClick={()=>decrementar()} >-</button>
         <span>{count}</span>
         <button onClick={()=>incrementar()} >+</button>
+      </div>
+      <div>
+        <input 
+          type="text"
+          placeholder="Digite aqui"
+          className='text-black text-2xl bg-red border-2 border-black rounded-lg p-3 min-w-[700px]'
+          value={inputValue}
+          onChange={handleChange}
+         />
+         <p>Texto digitado:</p>
+          <p>{inputValue}</p>
       </div>
     
     </main>
