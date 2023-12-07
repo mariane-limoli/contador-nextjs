@@ -52,7 +52,9 @@ useEffect(() => {
           onChange={handleChange}
          />
          <p>Texto digitado aparece abaixo:</p>
+         <div className='border-2 border-white rounded-lg h-8 p-2'>
           <p>{inputValue}</p>
+         </div>
       </div>
     
     </main>
